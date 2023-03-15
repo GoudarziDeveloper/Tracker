@@ -36,12 +36,7 @@ android {
 }
 
 dependencies {
-    implementation(AndroidX.coreKtx)
-    implementation(AndroidX.appCompat)
     testImplementation(Testing.junit4)
-    androidTestImplementation(Testing.junitAndroidExt)
-    androidTestImplementation(Testing.espresso)
-    implementation("${Compose.material}:${Compose.materialVersion}")
 
     implementation(project(Modules.core))
     //implementation(Coroutines.coroutines)

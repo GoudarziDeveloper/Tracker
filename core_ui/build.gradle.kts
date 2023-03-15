@@ -1,16 +1,14 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
-    id("kotlin-parcelize")
 }
 
 android {
-    namespace = "ir.tinyDeveloper.onboarding_domain"
-    compileSdk = ProjectConfig.compileSdk
+    namespace = "ir.tinyDeveloper.core_ui"
+    compileSdk = 33
 
     defaultConfig {
-        minSdk = ProjectConfig.minSdk
+        minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -33,10 +31,20 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    @Suppress("UnstableApiUsage")
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
+    }
 }
 
 dependencies {
+    implementation(AndroidX.coreKtx)
+    implementation(AndroidX.appCompat)
     testImplementation(Testing.junit4)
-
-    implementation(project(Modules.core))
+    androidTestImplementation(Testing.junitAndroidExt)
+    androidTestImplementation(Testing.espresso)
+    implementation("${Compose.material}:${Compose.materialVersion}")
 }

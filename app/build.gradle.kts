@@ -25,6 +25,7 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
+            @Suppress("UnstableApiUsage")
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
         getByName("debug") {
@@ -38,6 +39,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    @Suppress("UnstableApiUsage")
     buildFeatures {
         compose = true
     }
@@ -48,9 +50,10 @@ android {
 }
 
 dependencies {
+    androidTestImplementation(Testing.espresso)
     //implementation("androidx.core:core-ktx:1.8.0")
     //implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-    implementation(AndroidX.coreKtx)
+    //implementation(AndroidX.coreKtx)
     implementation(AndroidX.lifecycleRuntime)
     implementation(Compose.activityCompose)
     //implementation("androidx.activity:activity-compose:1.5.1")
@@ -65,11 +68,11 @@ dependencies {
     //implementation("androidx.compose.material3:material3")
     implementation(Compose.material)
     //testImplementation("junit:junit:4.13.2")
-    testImplementation(Testing.junit4)
+    //testImplementation(Testing.junit4)
     //androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation(Testing.junitAndroidExt)
+    //androidTestImplementation(Testing.junitAndroidExt)
     //androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(Testing.espresso)
+    //androidTestImplementation(Testing.espresso)
     //androidTestImplementation(platform("androidx.compose:compose-bom:2022.10.00"))
     androidTestImplementation(platform(Testing.composeBOM))
     //androidTestImplementation("androidx.compose.ui:ui-test-junit4")
@@ -93,7 +96,7 @@ dependencies {
     kapt(DaggerHilt.hiltCompiler)
 
     implementation(project(Modules.core))
-    //implementation(project(Modules.coreUi))
+    implementation(project(Modules.coreUi))
     implementation(project(Modules.onboardingPresentation))
     implementation(project(Modules.onboardingDomain))
     implementation(project(Modules.trackerPresentation))
