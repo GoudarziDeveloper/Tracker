@@ -1,4 +1,4 @@
-package ir.itsme.onboarding_presentation.screens.gender
+package ir.tinyDeveloper.onboarding_presentation.screens.gender
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

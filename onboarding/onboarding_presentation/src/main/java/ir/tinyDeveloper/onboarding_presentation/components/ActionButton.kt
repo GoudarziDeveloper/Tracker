@@ -1,4 +1,4 @@
-package ir.itsme.onboarding_presentation.components
+package ir.tinyDeveloper.onboarding_presentation.components
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape

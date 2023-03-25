@@ -1,4 +1,4 @@
-package ir.itsme.onboarding_presentation
+package ir.tinyDeveloper.onboarding_presentation
 
 import org.junit.Test
 

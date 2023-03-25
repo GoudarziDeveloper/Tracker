@@ -13,7 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import ir.itsme.onboarding_presentation.components.ActionButton
+import ir.tinyDeveloper.onboarding_presentation.components.ActionButton
 import ir.tinyDeveloper.core.R
 import ir.tinyDeveloper.core.navigation.Routes
 import ir.tinyDeveloper.core.util.UiEvent

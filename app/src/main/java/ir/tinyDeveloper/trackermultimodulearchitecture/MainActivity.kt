@@ -11,7 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
-import ir.itsme.onboarding_presentation.screens.gender.GenderScreen
+import ir.tinyDeveloper.onboarding_presentation.screens.gender.GenderScreen
 import ir.tinyDeveloper.core.navigation.Routes
 import ir.tinyDeveloper.onboarding_presentation.welcome_screen.WelcomeScreen
 import ir.tinyDeveloper.trackermultimodulearchitecture.navigation.navigate

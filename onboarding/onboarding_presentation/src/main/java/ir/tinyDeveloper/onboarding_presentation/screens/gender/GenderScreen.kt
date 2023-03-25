@@ -1,4 +1,4 @@
-package ir.itsme.onboarding_presentation.screens.gender
+package ir.tinyDeveloper.onboarding_presentation.screens.gender
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,8 +18,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.hilt.navigation.compose.hiltViewModel
-import ir.itsme.onboarding_presentation.components.ActionButton
-import ir.itsme.onboarding_presentation.components.SelectableButton
+import ir.tinyDeveloper.onboarding_presentation.components.ActionButton
+import ir.tinyDeveloper.onboarding_presentation.components.SelectableButton
 import ir.tinyDeveloper.core.R
 import ir.tinyDeveloper.core.domain.model.Gender
 import ir.tinyDeveloper.core.util.UiEvent

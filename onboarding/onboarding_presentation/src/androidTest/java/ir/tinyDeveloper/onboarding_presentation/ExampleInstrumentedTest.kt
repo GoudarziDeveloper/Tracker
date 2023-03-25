@@ -1,4 +1,4 @@
-package ir.itsme.onboarding_presentation
+package ir.tinyDeveloper.onboarding_presentation
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
