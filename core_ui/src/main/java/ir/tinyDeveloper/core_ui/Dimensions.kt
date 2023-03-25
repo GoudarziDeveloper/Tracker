@@ -15,6 +15,7 @@ data class Spacing(
 val LocalSpacing = compositionLocalOf{ Spacing() }
 
 data class Sizing(
-    val actionButtonCornerRadius: Dp = 100.dp
+    val actionButtonCornerRadius: Dp = 100.dp,
+    val selectableButtonRadius: Dp = 100.dp
 )
 val LocalSizing = compositionLocalOf { Sizing() }

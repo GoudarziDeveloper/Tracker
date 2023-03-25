@@ -49,8 +49,16 @@ dependencies {
     androidTestImplementation(Testing.junitAndroidExt)
     androidTestImplementation(Testing.espresso)
     implementation("${Compose.material}:${Compose.materialVersion}")
+    implementation(Compose.navigation)
 
     implementation(project(Modules.core))
     implementation(project(Modules.coreUi))
     implementation(project(Modules.onboardingDomain))
+
+    implementation(DaggerHilt.hiltAndroid)
+    kapt(DaggerHilt.hiltCompiler)
+
+    implementation(Compose.viewModelCompose)
+
+    implementation(Compose.hiltNavigationCompose)
 }

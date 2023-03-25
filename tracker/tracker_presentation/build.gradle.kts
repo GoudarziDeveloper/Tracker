@@ -46,8 +46,10 @@ dependencies {
     implementation(project(Modules.coreUi))
 
     implementation(project(Modules.core))
-    //"implementation"(project(Modules.coreUi))
     implementation(project(Modules.trackerDomain))
 
     implementation(Coil.coilCompose)
+
+    implementation(DaggerHilt.hiltAndroid)
+    kapt(DaggerHilt.hiltCompiler)
 }
