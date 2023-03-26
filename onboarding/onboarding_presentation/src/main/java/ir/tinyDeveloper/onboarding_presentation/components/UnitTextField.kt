@@ -25,7 +25,8 @@ fun UnitTextField(
     textStyle: TextStyle = TextStyle(
         color = MaterialTheme.colorScheme.primaryContainer,
         fontSize = MaterialTheme.typography.displayLarge.fontSize
-    )
+    ),
+    numberType: Boolean = true
 ) {
     Row(
         modifier = modifier,
@@ -36,7 +37,7 @@ fun UnitTextField(
             onValueChange = onValueChange,
             textStyle = textStyle,
             keyboardOptions = KeyboardOptions(
-                keyboardType = KeyboardType.Number
+                keyboardType = if(numberType) KeyboardType.Number else KeyboardType.Text
             ),
             singleLine = true,
             modifier = Modifier
