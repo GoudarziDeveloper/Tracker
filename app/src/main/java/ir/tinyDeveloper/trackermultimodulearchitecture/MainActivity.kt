@@ -20,6 +20,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import ir.tinyDeveloper.onboarding_presentation.screens.gender.GenderScreen
 import ir.tinyDeveloper.core.navigation.Routes
 import ir.tinyDeveloper.onboarding_presentation.screens.age.AgeScreen
+import ir.tinyDeveloper.onboarding_presentation.screens.height.HeightScreen
+import ir.tinyDeveloper.onboarding_presentation.screens.weight.WeightScreen
 import ir.tinyDeveloper.onboarding_presentation.welcome_screen.WelcomeScreen
 import ir.tinyDeveloper.trackermultimodulearchitecture.navigation.navigate
 import ir.tinyDeveloper.trackermultimodulearchitecture.ui.theme.TrackerMultiModuleArchitectureTheme
@@ -63,10 +65,16 @@ class MainActivity : ComponentActivity() {
 
                                 }
                                 composable(route = Routes.HEIGHT){
-
+                                    HeightScreen(
+                                        onNavigate = navController::navigate,
+                                        snackBarState = snackBarState
+                                    )
                                 }
                                 composable(route = Routes.WEIGHT){
-
+                                    WeightScreen(
+                                        onNavigate = navController::navigate,
+                                        snackBarState = snackBarState
+                                    )
                                 }
                                 composable(route = Routes.NUTRIENT_GOAL){
 
