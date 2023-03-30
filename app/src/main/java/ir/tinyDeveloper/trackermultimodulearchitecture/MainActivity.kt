@@ -19,7 +19,9 @@ import androidx.navigation.compose.rememberNavController
 import dagger.hilt.android.AndroidEntryPoint
 import ir.tinyDeveloper.onboarding_presentation.screens.gender.GenderScreen
 import ir.tinyDeveloper.core.navigation.Routes
+import ir.tinyDeveloper.onboarding_presentation.screens.activity.ActivityScreen
 import ir.tinyDeveloper.onboarding_presentation.screens.age.AgeScreen
+import ir.tinyDeveloper.onboarding_presentation.screens.goal.GoalScreen
 import ir.tinyDeveloper.onboarding_presentation.screens.height.HeightScreen
 import ir.tinyDeveloper.onboarding_presentation.screens.weight.WeightScreen
 import ir.tinyDeveloper.onboarding_presentation.welcome_screen.WelcomeScreen
@@ -56,13 +58,13 @@ class MainActivity : ComponentActivity() {
                                     )
                                 }
                                 composable(route = Routes.ACTIVITY) {
-
+                                    ActivityScreen(onNavigate = navController::navigate)
                                 }
                                 composable(route = Routes.GENDER){
                                     GenderScreen(onNavigate = navController::navigate)
                                 }
                                 composable(route = Routes.GOAL){
-
+                                    GoalScreen(onNavigate = navController::navigate)
                                 }
                                 composable(route = Routes.HEIGHT){
                                     HeightScreen(
