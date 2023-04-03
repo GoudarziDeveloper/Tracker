@@ -23,6 +23,7 @@ import ir.tinyDeveloper.onboarding_presentation.screens.activity.ActivityScreen
 import ir.tinyDeveloper.onboarding_presentation.screens.age.AgeScreen
 import ir.tinyDeveloper.onboarding_presentation.screens.goal.GoalScreen
 import ir.tinyDeveloper.onboarding_presentation.screens.height.HeightScreen
+import ir.tinyDeveloper.onboarding_presentation.screens.nutrient_goal.NutrientGoalScreen
 import ir.tinyDeveloper.onboarding_presentation.screens.weight.WeightScreen
 import ir.tinyDeveloper.onboarding_presentation.welcome_screen.WelcomeScreen
 import ir.tinyDeveloper.trackermultimodulearchitecture.navigation.navigate
@@ -79,7 +80,10 @@ class MainActivity : ComponentActivity() {
                                     )
                                 }
                                 composable(route = Routes.NUTRIENT_GOAL){
-
+                                    NutrientGoalScreen(
+                                        onNavigate = navController::navigate,
+                                        snackBarState = snackBarState
+                                    )
                                 }
                                 composable(route = Routes.TRACKER_OVERVIEW){
 

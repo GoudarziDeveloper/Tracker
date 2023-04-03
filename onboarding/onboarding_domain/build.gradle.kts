@@ -36,7 +36,9 @@ android {
 }
 
 dependencies {
-    testImplementation(Testing.junit4)
-
+    implementation(AndroidX.coreKtx)
+    implementation(AndroidX.appCompat)
     implementation(project(Modules.core))
+    implementation(DaggerHilt.hiltAndroid)
+    kapt(DaggerHilt.hiltCompiler)
 }

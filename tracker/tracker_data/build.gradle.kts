@@ -40,6 +40,11 @@ dependencies {
     implementation(project(Modules.core))
     implementation(project(Modules.trackerDomain))
 
+    implementation(AndroidX.coreKtx)
+    implementation(AndroidX.appCompat)
+    implementation(DaggerHilt.hiltAndroid)
+    kapt(DaggerHilt.hiltCompiler)
+
     implementation(Retrofit.okHttp)
     implementation(Retrofit.retrofit)
     implementation(Retrofit.okHttpLoggingInterceptor)

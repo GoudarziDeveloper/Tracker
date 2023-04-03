@@ -39,5 +39,5 @@ dependencies {
     testImplementation(Testing.junit4)
 
     implementation(project(Modules.core))
-    //implementation(Coroutines.coroutines)
+    implementation(Coroutines.coroutines)
 }

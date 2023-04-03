@@ -29,9 +29,7 @@ class AgeViewModel @Inject constructor(
     val uiEvent = _uiEvent.receiveAsFlow()
 
     fun onAgeChange(age: String){
-        if (age.length <= 3){
-            this.age = filterOutDigits(age)
-        }
+        this.age = filterOutDigits(age, 3)
     }
 
     fun onNextClicked(){
