@@ -40,4 +40,9 @@ dependencies {
 
     implementation(project(Modules.core))
     implementation(Coroutines.coroutines)
+
+    implementation(AndroidX.coreKtx)
+    implementation(AndroidX.appCompat)
+    implementation(DaggerHilt.hiltAndroid)
+    kapt(DaggerHilt.hiltCompiler)
 }
