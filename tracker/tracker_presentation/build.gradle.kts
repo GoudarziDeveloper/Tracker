@@ -43,7 +43,12 @@ android {
 }
 
 dependencies {
+    implementation(AndroidX.coreKtx)
+    implementation(AndroidX.appCompat)
+
     implementation(project(Modules.coreUi))
+    implementation("${Compose.material}:${Compose.materialVersion}")
+    implementation(Compose.navigation)
 
     implementation(project(Modules.core))
     implementation(project(Modules.trackerDomain))
@@ -52,4 +57,8 @@ dependencies {
 
     implementation(DaggerHilt.hiltAndroid)
     kapt(DaggerHilt.hiltCompiler)
+
+    implementation(Compose.viewModelCompose)
+
+    implementation(Compose.hiltNavigationCompose)
 }

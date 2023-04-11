@@ -1,9 +1,11 @@
 package ir.tinyDeveloper.trackermultimodulearchitecture
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
@@ -26,11 +28,13 @@ import ir.tinyDeveloper.onboarding_presentation.screens.height.HeightScreen
 import ir.tinyDeveloper.onboarding_presentation.screens.nutrient_goal.NutrientGoalScreen
 import ir.tinyDeveloper.onboarding_presentation.screens.weight.WeightScreen
 import ir.tinyDeveloper.onboarding_presentation.welcome_screen.WelcomeScreen
+import ir.tinyDeveloper.tracker_presentation.screens.tracker_over_view.TrackerOverviewScreen
 import ir.tinyDeveloper.trackermultimodulearchitecture.navigation.navigate
 import ir.tinyDeveloper.trackermultimodulearchitecture.ui.theme.TrackerMultiModuleArchitectureTheme
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,7 +90,7 @@ class MainActivity : ComponentActivity() {
                                     )
                                 }
                                 composable(route = Routes.TRACKER_OVERVIEW){
-
+                                    TrackerOverviewScreen(onNavigate = navController::navigate)
                                 }
                                 composable(route = Routes.SEARCH){
 

@@ -19,6 +19,64 @@ import ir.tinyDeveloper.core_ui.LocalSizing
 import ir.tinyDeveloper.core_ui.Spacing
 import ir.tinyDeveloper.core_ui.LocalSpacing
 import ir.tinyDeveloper.core_ui.Sizing
+import ir.tinyDeveloper.core_ui.md_theme_dark_background
+import ir.tinyDeveloper.core_ui.md_theme_dark_error
+import ir.tinyDeveloper.core_ui.md_theme_dark_errorContainer
+import ir.tinyDeveloper.core_ui.md_theme_dark_inverseOnSurface
+import ir.tinyDeveloper.core_ui.md_theme_dark_inversePrimary
+import ir.tinyDeveloper.core_ui.md_theme_dark_inverseSurface
+import ir.tinyDeveloper.core_ui.md_theme_dark_onBackground
+import ir.tinyDeveloper.core_ui.md_theme_dark_onError
+import ir.tinyDeveloper.core_ui.md_theme_dark_onErrorContainer
+import ir.tinyDeveloper.core_ui.md_theme_dark_onPrimary
+import ir.tinyDeveloper.core_ui.md_theme_dark_onPrimaryContainer
+import ir.tinyDeveloper.core_ui.md_theme_dark_onSecondary
+import ir.tinyDeveloper.core_ui.md_theme_dark_onSecondaryContainer
+import ir.tinyDeveloper.core_ui.md_theme_dark_onSurface
+import ir.tinyDeveloper.core_ui.md_theme_dark_onSurfaceVariant
+import ir.tinyDeveloper.core_ui.md_theme_dark_onTertiary
+import ir.tinyDeveloper.core_ui.md_theme_dark_onTertiaryContainer
+import ir.tinyDeveloper.core_ui.md_theme_dark_outline
+import ir.tinyDeveloper.core_ui.md_theme_dark_outlineVariant
+import ir.tinyDeveloper.core_ui.md_theme_dark_primary
+import ir.tinyDeveloper.core_ui.md_theme_dark_primaryContainer
+import ir.tinyDeveloper.core_ui.md_theme_dark_scrim
+import ir.tinyDeveloper.core_ui.md_theme_dark_secondary
+import ir.tinyDeveloper.core_ui.md_theme_dark_secondaryContainer
+import ir.tinyDeveloper.core_ui.md_theme_dark_surface
+import ir.tinyDeveloper.core_ui.md_theme_dark_surfaceTint
+import ir.tinyDeveloper.core_ui.md_theme_dark_surfaceVariant
+import ir.tinyDeveloper.core_ui.md_theme_dark_tertiary
+import ir.tinyDeveloper.core_ui.md_theme_dark_tertiaryContainer
+import ir.tinyDeveloper.core_ui.md_theme_light_background
+import ir.tinyDeveloper.core_ui.md_theme_light_error
+import ir.tinyDeveloper.core_ui.md_theme_light_errorContainer
+import ir.tinyDeveloper.core_ui.md_theme_light_inverseOnSurface
+import ir.tinyDeveloper.core_ui.md_theme_light_inversePrimary
+import ir.tinyDeveloper.core_ui.md_theme_light_inverseSurface
+import ir.tinyDeveloper.core_ui.md_theme_light_onBackground
+import ir.tinyDeveloper.core_ui.md_theme_light_onError
+import ir.tinyDeveloper.core_ui.md_theme_light_onErrorContainer
+import ir.tinyDeveloper.core_ui.md_theme_light_onPrimary
+import ir.tinyDeveloper.core_ui.md_theme_light_onPrimaryContainer
+import ir.tinyDeveloper.core_ui.md_theme_light_onSecondary
+import ir.tinyDeveloper.core_ui.md_theme_light_onSecondaryContainer
+import ir.tinyDeveloper.core_ui.md_theme_light_onSurface
+import ir.tinyDeveloper.core_ui.md_theme_light_onSurfaceVariant
+import ir.tinyDeveloper.core_ui.md_theme_light_onTertiary
+import ir.tinyDeveloper.core_ui.md_theme_light_onTertiaryContainer
+import ir.tinyDeveloper.core_ui.md_theme_light_outline
+import ir.tinyDeveloper.core_ui.md_theme_light_outlineVariant
+import ir.tinyDeveloper.core_ui.md_theme_light_primary
+import ir.tinyDeveloper.core_ui.md_theme_light_primaryContainer
+import ir.tinyDeveloper.core_ui.md_theme_light_scrim
+import ir.tinyDeveloper.core_ui.md_theme_light_secondary
+import ir.tinyDeveloper.core_ui.md_theme_light_secondaryContainer
+import ir.tinyDeveloper.core_ui.md_theme_light_surface
+import ir.tinyDeveloper.core_ui.md_theme_light_surfaceTint
+import ir.tinyDeveloper.core_ui.md_theme_light_surfaceVariant
+import ir.tinyDeveloper.core_ui.md_theme_light_tertiary
+import ir.tinyDeveloper.core_ui.md_theme_light_tertiaryContainer
 
 private val DarkColorScheme = lightColorScheme(
     primary = md_theme_light_primary,
@@ -105,7 +163,7 @@ fun TrackerMultiModuleArchitectureTheme(
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as Activity).window
-            window.statusBarColor = colorScheme.primary.toArgb()
+            window.statusBarColor = colorScheme.primaryContainer.toArgb()
             WindowCompat.getInsetsController(window, view).isAppearanceLightStatusBars = darkTheme
         }
     }

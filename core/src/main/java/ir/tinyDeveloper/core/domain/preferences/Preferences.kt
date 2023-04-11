@@ -14,8 +14,9 @@ interface Preferences {
     fun saveCarbRatio(ratio: Float)
     fun saveProteinRatio(ratio: Float)
     fun saveFatRatio(ratio: Float)
-
     fun loadUserInfo(): UserInfo
+    fun saveShouldShowOnBoarding(shouldSHow: Boolean)
+    fun loadShouldShowOnBoarding(): Boolean
 
     companion object{
         const val APP_PREFERENCES = "tracker_app_preferences"
@@ -28,5 +29,6 @@ interface Preferences {
         const val KEY_CARB_RATIO = "carb_ratio"
         const val KEY_PROTEIN_RATIO = "protein_ratio"
         const val KEY_FAT_RATIO = "fat_ratio"
+        const val SHOULD_SHOW_ON_BOARDING = "should_show_on_boarding"
     }
 }

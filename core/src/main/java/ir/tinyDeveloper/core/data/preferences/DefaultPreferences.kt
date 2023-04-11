@@ -46,6 +46,14 @@ class DefaultPreferences(
         sharedPref.edit().putFloat(Preferences.KEY_FAT_RATIO, ratio).apply()
     }
 
+    override fun saveShouldShowOnBoarding(shouldSHow: Boolean) {
+        sharedPref.edit().putBoolean(Preferences.SHOULD_SHOW_ON_BOARDING, shouldSHow).apply()
+    }
+
+    override fun loadShouldShowOnBoarding(): Boolean {
+        return sharedPref.getBoolean(Preferences.SHOULD_SHOW_ON_BOARDING, true)
+    }
+
     override fun loadUserInfo(): UserInfo {
         val gender = sharedPref.getString(Preferences.KEY_GENDER, null)
         val age = sharedPref.getInt(Preferences.KEY_AGE, -1)

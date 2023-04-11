@@ -1,4 +1,4 @@
-package ir.tinyDeveloper.trackermultimodulearchitecture.ui.theme
+package ir.tinyDeveloper.core_ui
 
 import androidx.compose.ui.graphics.Color
 
@@ -62,4 +62,7 @@ val md_theme_dark_surfaceTint = Color(0xFF76DD68)
 val md_theme_dark_outlineVariant = Color(0xFF42493F)
 val md_theme_dark_scrim = Color(0xFF000000)
 
+val CarbColor = Color(0xFFEEFF00)
+val ProteinColor = Color(0xFFFFAA00)
+val FatColor = Color(0xFFF44336)
 

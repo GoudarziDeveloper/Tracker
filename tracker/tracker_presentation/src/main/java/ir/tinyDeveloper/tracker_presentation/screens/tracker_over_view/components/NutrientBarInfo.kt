@@ -1,0 +1,89 @@
+package ir.tinyDeveloper.tracker_presentation.screens.tracker_over_view.components
+
+import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.tween
+import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.Dp
+import ir.tinyDeveloper.core.R
+import ir.tinyDeveloper.core_ui.LocalSizing
+import ir.tinyDeveloper.tracker_presentation.components.UnitDisplay
+
+@Composable
+fun NutrientBarInfo(
+    value: Int,
+    goal: Int,
+    name: String,
+    color: Color,
+    modifier: Modifier = Modifier,
+    strokeWidth: Dp = LocalSizing.current.nutrientBarInfo
+) {
+    val background = MaterialTheme.colorScheme.background
+    val goalExceededColor = MaterialTheme.colorScheme.error
+
+    val angleRatio = remember {
+        Animatable(0f)
+    }
+
+    LaunchedEffect(key1 = value) {
+        angleRatio.animateTo(
+            targetValue = if (goal > 0) value / goal.toFloat() else 0f,
+            animationSpec = tween(durationMillis = 300)
+        )
+    }
+
+    Box(modifier = modifier, contentAlignment = Alignment.Center) {
+        Canvas(
+            modifier = Modifier
+                .fillMaxWidth()
+                .aspectRatio(1f)
+        ) {
+            drawArc(
+                startAngle = 0f,
+                color = if (value <= goal) background else goalExceededColor,
+                sweepAngle = 360f,
+                useCenter = false,
+                size = size,
+                style = Stroke(
+                    width = strokeWidth.toPx(),
+                    cap = StrokeCap.Round
+                )
+            )
+            if (value <= goal) {
+                drawArc(
+                    color = color,
+                    startAngle = 90f,
+                    sweepAngle = 360f * angleRatio.value,
+                    useCenter = false,
+                    size = size,
+                    style = Stroke(
+                        width = strokeWidth.toPx(),
+                        cap = StrokeCap.Round
+                    )
+                )
+            }
+        }
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            UnitDisplay(amount = value, unit = stringResource(id = R.string.grams))
+            Text(text = name, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.Light)
+        }
+    }
+}
