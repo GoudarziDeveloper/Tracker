@@ -1,6 +1,7 @@
-package ir.tinyDeveloper.tracker_presentation.model
+package ir.tinyDeveloper.tracker_presentation.model.tracker_over_view
 
 import ir.tinyDeveloper.tracker_domain.model.TrackedFood
+import ir.tinyDeveloper.tracker_presentation.model.Meal
 
 sealed class TrackerOverviewEvent {
     object OnNextDayClicked: TrackerOverviewEvent()

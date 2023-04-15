@@ -1,4 +1,4 @@
-package ir.tinyDeveloper.tracker_presentation
+package ir.tinyDeveloper.tracker_presentation.screens.tracker_over_view
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -12,8 +12,8 @@ import ir.tinyDeveloper.core.domain.preferences.Preferences
 import ir.tinyDeveloper.core.navigation.Routes
 import ir.tinyDeveloper.core.util.UiEvent
 import ir.tinyDeveloper.tracker_domain.use_case.TrackerUseCase
-import ir.tinyDeveloper.tracker_presentation.model.TrackerOverviewState
-import ir.tinyDeveloper.tracker_presentation.model.TrackerOverviewEvent
+import ir.tinyDeveloper.tracker_presentation.model.tracker_over_view.TrackerOverviewState
+import ir.tinyDeveloper.tracker_presentation.model.tracker_over_view.TrackerOverviewEvent
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.launchIn
@@ -46,9 +46,9 @@ class TrackerOverviewViewModel @Inject constructor(
                     _uiEvent.send(
                         UiEvent.Navigate(
                             route = Routes.SEARCH
-                                    + "/${event.meal.name}"
+                                    + "/${event.meal.mealType.name}"
                                     + "/${state.date.dayOfMonth}"
-                                    + "/${state.date.month}"
+                                    + "/${state.date.monthValue}"
                                     + "/${state.date.year}"
                         )
                     )

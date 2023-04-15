@@ -18,7 +18,9 @@ import androidx.core.view.WindowCompat
 import ir.tinyDeveloper.core_ui.LocalSizing
 import ir.tinyDeveloper.core_ui.Spacing
 import ir.tinyDeveloper.core_ui.LocalSpacing
+import ir.tinyDeveloper.core_ui.LocalUiConstants
 import ir.tinyDeveloper.core_ui.Sizing
+import ir.tinyDeveloper.core_ui.UiConstants
 import ir.tinyDeveloper.core_ui.md_theme_dark_background
 import ir.tinyDeveloper.core_ui.md_theme_dark_error
 import ir.tinyDeveloper.core_ui.md_theme_dark_errorContainer
@@ -78,7 +80,7 @@ import ir.tinyDeveloper.core_ui.md_theme_light_surfaceVariant
 import ir.tinyDeveloper.core_ui.md_theme_light_tertiary
 import ir.tinyDeveloper.core_ui.md_theme_light_tertiaryContainer
 
-private val DarkColorScheme = lightColorScheme(
+private val LightColorScheme = lightColorScheme(
     primary = md_theme_light_primary,
     onPrimary = md_theme_light_onPrimary,
     primaryContainer = md_theme_light_primaryContainer,
@@ -111,7 +113,7 @@ private val DarkColorScheme = lightColorScheme(
 )
 
 
-private val LightColorScheme = darkColorScheme(
+private val DarkColorScheme = darkColorScheme(
     primary = md_theme_dark_primary,
     onPrimary = md_theme_dark_onPrimary,
     primaryContainer = md_theme_dark_primaryContainer,
@@ -168,7 +170,11 @@ fun TrackerMultiModuleArchitectureTheme(
         }
     }
 
-    CompositionLocalProvider(LocalSpacing provides Spacing(), LocalSizing provides Sizing() ) {
+    CompositionLocalProvider(
+        LocalSpacing provides Spacing(),
+        LocalSizing provides Sizing(),
+        LocalUiConstants provides UiConstants()
+    ) {
         MaterialTheme(
             colorScheme = colorScheme,
             typography = Typography,

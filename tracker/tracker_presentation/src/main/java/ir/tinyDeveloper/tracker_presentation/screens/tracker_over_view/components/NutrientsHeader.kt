@@ -25,7 +25,7 @@ import ir.tinyDeveloper.core_ui.LocalSizing
 import ir.tinyDeveloper.core_ui.LocalSpacing
 import ir.tinyDeveloper.core_ui.ProteinColor
 import ir.tinyDeveloper.tracker_presentation.components.UnitDisplay
-import ir.tinyDeveloper.tracker_presentation.model.TrackerOverviewState
+import ir.tinyDeveloper.tracker_presentation.model.tracker_over_view.TrackerOverviewState
 
 @Composable
 fun NutrientsHeader(

@@ -1,8 +1,10 @@
-package ir.tinyDeveloper.tracker_presentation.model
+package ir.tinyDeveloper.tracker_presentation.model.tracker_over_view
 
 import android.os.Build
 import androidx.annotation.RequiresApi
 import ir.tinyDeveloper.tracker_domain.model.TrackedFood
+import ir.tinyDeveloper.tracker_presentation.model.Meal
+import ir.tinyDeveloper.tracker_presentation.model.defaultMeals
 import java.time.LocalDate
 
 @RequiresApi(Build.VERSION_CODES.O)
